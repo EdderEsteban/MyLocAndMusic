@@ -30,6 +30,24 @@ public class GalleryFragment extends Fragment {
                     getContext().startService(intent);
             }
         });
+
+        binding.btnPause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ServicioMusical.class);
+                intent.setAction(ServicioMusical.ACTION_PAUSE); // Pausa la Musica
+                getContext().startService(intent);
+            }
+        });
+
+        binding.btnStop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ServicioMusical.class);
+                intent.setAction(ServicioMusical.ACTION_STOP); // Detiene la Musica
+                getContext().startService(intent);
+            }
+        });
         return root;
     }
 
